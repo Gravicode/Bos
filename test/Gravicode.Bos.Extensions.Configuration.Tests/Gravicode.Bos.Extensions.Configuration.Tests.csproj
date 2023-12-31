@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+	  <IsTestProject>true</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <ProjectReference Include="..\..\src\Gravicode.Bos.Hosting\Gravicode.Bos.Hosting.csproj" />
+	  <ProjectReference Include="..\Test.Infrastructure\Test.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\src\Gravicode.Bos.Extensions.Configuration\Gravicode.Bos.Extensions.Configuration.csproj" />
+  </ItemGroup>
+</Project>

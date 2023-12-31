@@ -1,0 +1,8 @@
+{"container":"lowercaseservice-proxy_a2a3cfbf-6"}
+{"container":"titlecaseservice-proxy_53e455e3-b"}
+{"container":"sentenceapp-proxy_e8741dc8-4"}
+{"container":"uppercaseservice-dapr-proxy_1301c8a6-f"}
+{"container":"lowercaseservice-dapr-proxy_bcc024bd-a"}
+{"container":"titlecaseservice-dapr-proxy_c0c73626-9"}
+{"container":"sentenceapp-dapr-proxy_46ff9971-d"}
+{"container":"uppercaseservice_035a7819-8"}

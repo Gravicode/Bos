@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+	  <AssemblyName>Gravicode.Bos.UnitTests</AssemblyName>
+	  <IsTestProject>true</IsTestProject>
+	  <IsUnitTestProject>true</IsUnitTestProject>
+	  <IsPackable>false</IsPackable>
+	  <TestRunnerName>XUnit</TestRunnerName>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <PackageReference Include="coverlet.collector" Version="1.0.1" />
+	  <PackageReference Include="coverlet.msbuild" Version="2.8.0">
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		  <PrivateAssets>all</PrivateAssets>
+	  </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+	  <ProjectReference Include="..\..\src\Gravicode.Bos.Hosting\Gravicode.Bos.Hosting.csproj" />
+	  <ProjectReference Include="..\..\src\Gravicode.Bos.Core\Gravicode.Bos.Core.csproj" />
+	  <ProjectReference Include="..\..\src\bos\bos.csproj" />
+	  <ProjectReference Include="..\Test.Infrastructure\Test.Infrastructure.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="CoreStrings.Designer.cs">
+      <DependentUpon>CoreStrings.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="CoreStrings.resx">
+      <LastGenOutput>CoreStrings.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+	  <None Update="testassets\envfile_a.env">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+	  <None Update="testassets\envfile_b.env">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </None>
+  </ItemGroup>
+
+</Project>

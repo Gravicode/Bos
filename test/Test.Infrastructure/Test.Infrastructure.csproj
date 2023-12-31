@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+	  <IsPackable>false</IsPackable>
+	  <TestRunnerName>XUnit</TestRunnerName>
+	  <Nullable>disable</Nullable>
+	  <IsTestProject>false</IsTestProject>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <ProjectReference Include="..\..\src\Gravicode.Bos.Hosting\Gravicode.Bos.Hosting.csproj" />
+	  <ProjectReference Include="..\..\src\Gravicode.Bos.Core\Gravicode.Bos.Core.csproj" />
+	  <ProjectReference Include="..\..\src\bos\bos.csproj" />
+
+	  <PackageReference Include="xunit" Version="2.4.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Folder Include="Logging\" />
+  </ItemGroup>
+</Project>

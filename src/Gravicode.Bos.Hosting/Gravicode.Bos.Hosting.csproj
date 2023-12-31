@@ -1,0 +1,80 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+	  <OutputType>Library</OutputType>
+	  <TargetFramework>net8.0</TargetFramework>
+	  <Description>Orchestration host APIs.</Description>
+	  <AssemblyName>Gravicode.Bos.Hosting</AssemblyName>
+	  <PackageId>Gravicode.Bos.Hosting</PackageId>
+	  <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+	  <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="wwwroot\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="Watch\assets\**\*" CopyToOutputDirectory="PreserveNewest" CopyToPublishDirectory="PreserveNewest" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Bedrock.Framework" Version="0.1.62-alpha.g8a965bbcba" />
+		<PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="3.1.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
+		<PackageReference Include="Serilog.Extensions.Hosting" Version="3.0.0" />
+		<PackageReference Include="Serilog.Sinks.Console" Version="3.1.1" />
+		<PackageReference Include="System.IO.Pipelines" Version="4.7.2" />
+		<PackageReference Include="System.Reactive" Version="4.3.2" />
+		<PackageReference Include="YamlDotNet" Version="11.2.1" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Gravicode.Bos.Hosting.Diagnostics\Gravicode.Bos.Hosting.Diagnostics.csproj" />
+		<ProjectReference Include="..\Gravicode.Bos.Core\Gravicode.Bos.Core.csproj" />
+		<ProjectReference Include="..\Gravicode.Bos.Hosting.Runtime\Gravicode.Bos.Hosting.Runtime.csproj" />
+		<ProjectReference Include="..\Gravicode.Bos.Proxy\Gravicode.Bos.Proxy.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\shared\DirectoryExtensions.cs" Link="DirectoryExtensions.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="wwwroot\css\bootstrap\bootstrap.min.css">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="wwwroot\css\open-iconic\font\css\open-iconic-bootstrap.min.css">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="wwwroot\css\open-iconic\font\fonts\open-iconic.eot">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="wwwroot\css\open-iconic\font\fonts\open-iconic.otf">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="wwwroot\css\open-iconic\font\fonts\open-iconic.svg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="wwwroot\css\open-iconic\font\fonts\open-iconic.ttf">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="wwwroot\css\open-iconic\font\fonts\open-iconic.woff">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="wwwroot\css\site.css">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="wwwroot\favicon.ico">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="wwwroot\img\brand-bos-white.svg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Update="wwwroot\js\utilities.js">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	
+</Project>

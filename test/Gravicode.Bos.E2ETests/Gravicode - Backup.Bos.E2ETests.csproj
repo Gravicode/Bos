@@ -1,0 +1,146 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+	  <AssemblyName>Gravicode.Bos.E2ETest</AssemblyName>
+	  <IsTestProject>true</IsTestProject>
+	  <!-- TODO: Investigate Ubuntu >16.04 test hangs and Mac test failures and re-enable E2E tests. -->
+	  <IsUnitTestProject>false</IsUnitTestProject>
+	  <TestRunnerName>XUnit</TestRunnerName>
+  </PropertyGroup>
+
+  <ItemGroup>
+	  <!--
+      The Microsoft.Build.Locator package takes care of dynamically loading these assemblies
+      at runtime. We don't need/want to ship them, just to have them as references.
+    -->
+	  <PackageReference Include="Microsoft.Build" Version="17.3.2" ExcludeAssets="runtime" />
+	  <PackageReference Include="Microsoft.Build.Framework" Version="17.3.2" ExcludeAssets="runtime" />
+	  <PackageReference Include="Microsoft.Build.Locator" Version="1.5.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+	  <ProjectReference Include="..\..\src\Gravicode.Bos.Hosting\Gravicode.Bos.Hosting.csproj" />
+	  <ProjectReference Include="..\Test.Infrastructure\Test.Infrastructure.csproj" />
+	  <ProjectReference Include="..\..\src\Gravicode.Bos.Core\Gravicode.Bos.Core.csproj" />
+	  <ProjectReference Include="..\..\src\tye\tye.csproj" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+	  <Content Include="testassets\**\*" CopyToOutputDirectory="PreserveNewest" />
+	  <Compile Remove="testassets\**\*" />
+	  <None Remove="testassets\generate\apps-with-ingress.1.18.yaml" />
+	  <None Remove="testassets\projects\non-standard-dashboard-port\test-project\appsettings.Development.json" />
+	  <None Remove="testassets\projects\non-standard-dashboard-port\test-project\appsettings.json" />
+	  <None Remove="testassets\projects\non-standard-dashboard-port\test-project\Properties\launchSettings.json" />
+	  <None Remove="testassets\projects\non-standard-dashboard-port\tye.yaml" />
+	  <None Remove="testassets\projects\non-standard-dashboard-port-5.0\test-project\appsettings.Development.json" />
+	  <None Remove="testassets\projects\non-standard-dashboard-port-5.0\test-project\appsettings.json" />
+	  <None Remove="testassets\projects\non-standard-dashboard-port-5.0\tye.yaml" />
+	  <Compile Include="..\..\src\shared\KubectlDetector.cs" Link="KubectlDetector.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+	   <AssemblyName>Gravicode.Bos.E2ETest</AssemblyName>
+    <IsTestProject>true</IsTestProject>
+    <!-- TODO: Investigate Ubuntu >16.04 test hangs and Mac test failures and re-enable E2E tests. -->
+    <IsUnitTestProject>false</IsUnitTestProject>
+    <TestRunnerName>XUnit</TestRunnerName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      The Microsoft.Build.Locator package takes care of dynamically loading these assemblies
+      at runtime. We don't need/want to ship them, just to have them as references.
+    -->
+    <PackageReference Include="Microsoft.Build" Version="17.3.2" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.Build.Framework" Version="17.3.2" ExcludeAssets="runtime" />
+    <PackageReference Include="Microsoft.Build.Locator" Version="1.5.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Gravicode.Bos.Hosting\Gravicode.Bos.Hosting.csproj" />
+    <ProjectReference Include="..\Test.Infrastructure\Test.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\src\Gravicode.Bos.Core\Gravicode.Bos.Core.csproj" />
+    <ProjectReference Include="..\..\src\tye\tye.csproj" />
+    
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="testassets\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Compile Remove="testassets\**\*" />
+    <None Remove="testassets\generate\apps-with-ingress.1.18.yaml" />
+    <None Remove="testassets\projects\non-standard-dashboard-port\test-project\appsettings.Development.json" />
+    <None Remove="testassets\projects\non-standard-dashboard-port\test-project\appsettings.json" />
+    <None Remove="testassets\projects\non-standard-dashboard-port\test-project\Properties\launchSettings.json" />
+    <None Remove="testassets\projects\non-standard-dashboard-port\tye.yaml" />
+    <None Remove="testassets\projects\non-standard-dashboard-port-5.0\test-project\appsettings.Development.json" />
+    <None Remove="testassets\projects\non-standard-dashboard-port-5.0\test-project\appsettings.json" />
+    <None Remove="testassets\projects\non-standard-dashboard-port-5.0\tye.yaml" />
+    <Compile Include="..\..\src\shared\KubectlDetector.cs" Link="KubectlDetector.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="testassets\projects\apps-with-ingress\ApplicationA\ApplicationA.csproj" />
+    <None Include="testassets\projects\apps-with-ingress\ApplicationB\ApplicationB.csproj" />
+    <None Include="testassets\projects\apps-with-ingress\ApplicationC-UI\ApplicationC-UI.csproj" />
+    <None Include="testassets\projects\apps-with-ingress\apps-with-ingress.sln" />
+    <None Include="testassets\projects\azure-functions\backend\backend.csproj" />
+    <None Include="testassets\projects\azure-functions\frontend-backend.sln" />
+    <None Include="testassets\projects\azure-functions\frontend\frontend.csproj" />
+    <None Include="testassets\projects\Console.Normalization.svc.Name\Console.Normalization.svc.Name.csproj" />
+    <None Include="testassets\projects\dapr\dapr.csproj" />
+    <None Include="testassets\projects\dockerfile\frontend\frontend.csproj" />
+    <None Include="testassets\projects\dotnet-env-vars\single-project.sln" />
+    <None Include="testassets\projects\dotnet-env-vars\test-project\test-project.csproj" />
+    <None Include="testassets\projects\frontend-backend\backend\backend-baseimage.csproj" />
+    <None Include="testassets\projects\frontend-backend\backend\backend.csproj" />
+    <None Include="testassets\projects\frontend-backend\frontend-backend.sln" />
+    <None Include="testassets\projects\frontend-backend\frontend\frontend.csproj" />
+    <None Include="testassets\projects\generate-connectionstring-dependency\frontend\frontend.csproj" />
+    <None Include="testassets\projects\generate-connectionstring-dependency\generate-connectionstring-dependency.sln" />
+    <None Include="testassets\projects\generate-named-binding\frontend\frontend.csproj" />
+    <None Include="testassets\projects\generate-named-binding\generate-named-binding.sln" />
+    <None Include="testassets\projects\generate-uri-dependency\frontend\frontend.csproj" />
+    <None Include="testassets\projects\generate-uri-dependency\generate-uri-dependency.sln" />
+    <None Include="testassets\projects\health-checks\api\api.csproj" />
+    <None Include="testassets\projects\health-checks\health-checks.sln" />
+    <None Include="testassets\projects\multi-phase-dockerfile\multi-phase-dockerfile.csproj" />
+    <None Include="testassets\projects\multi-project\backend\backend.csproj" />
+    <None Include="testassets\projects\multi-project\frontend\frontend.csproj" />
+    <None Include="testassets\projects\multi-project\multi-project.sln" />
+    <None Include="testassets\projects\multi-project\worker\worker.csproj" />
+    <None Include="testassets\projects\multi-targetframeworks\multi-targetframeworks.sln" />
+    <None Include="testassets\projects\multi-targetframeworks\multi-targetframeworks\multi-targetframeworks.csproj" />
+    <None Include="testassets\projects\multirepo\results\results.csproj" />
+    <None Include="testassets\projects\multirepo\results\results.sln" />
+    <None Include="testassets\projects\multirepo\vote\vote.csproj" />
+    <None Include="testassets\projects\multirepo\worker\worker.csproj" />
+    <None Include="testassets\projects\nginx-ingress\ApplicationA\ApplicationA.csproj" />
+    <None Include="testassets\projects\nginx-ingress\ApplicationB\ApplicationB.csproj" />
+    <None Include="testassets\projects\nginx-ingress\nginx-with-ingress.sln" />
+    <None Include="testassets\projects\non-standard-dashboard-port-5.0\single-project.sln" />
+    <None Include="testassets\projects\non-standard-dashboard-port-5.0\test-project\test-project.csproj" />
+    <None Include="testassets\projects\non-standard-dashboard-port\single-project.sln" />
+    <None Include="testassets\projects\non-standard-dashboard-port\test-project\test-project.csproj" />
+    <None Include="testassets\projects\project-types\app\app.csproj" />
+    <None Include="testassets\projects\project-types\class-library\class-library.csproj" />
+    <None Include="testassets\projects\project-types\project-types.sln" />
+    <None Include="testassets\projects\project-types\test-project\test-project.csproj" />
+    <None Include="testassets\projects\single-phase-dockerfile-args-duplicates\single-phase-dockerfile-args.csproj" />
+    <None Include="testassets\projects\single-phase-dockerfile-args\single-phase-dockerfile-args.csproj" />
+    <None Include="testassets\projects\single-phase-dockerfile-multi-args\single-phase-dockerfile-multi-args.csproj" />
+    <None Include="testassets\projects\single-phase-dockerfile\single-phase-dockerfile.csproj" />
+    <None Include="testassets\projects\single-project-5.0\single-project.sln" />
+    <None Include="testassets\projects\single-project-5.0\test-project\test-project.csproj" />
+    <None Include="testassets\projects\single-project\single-project.sln" />
+    <None Include="testassets\projects\single-project\test-project\test-project.csproj" />
+    <None Include="testassets\projects\volume-test\volume-test.csproj" />
+    <None Include="testassets\projects\web-app\web-app.csproj" />
+  </ItemGroup>
+
+</Project>

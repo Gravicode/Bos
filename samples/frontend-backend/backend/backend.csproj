@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Backend</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="Gravicode.Bos.Extensions.Configuration">
+      <HintPath>..\dependencies\Gravicode.Bos.Extensions.Configuration.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+
+</Project>

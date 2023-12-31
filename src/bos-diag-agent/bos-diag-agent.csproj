@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<!--<UserSecretsId>dotnet-bos_diag_agent-a285768e-24eb-4eae-9edf-0931604061e2</UserSecretsId>-->
+		<RootNamespace>Gravicode.Bos</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Gravicode.Bos.Extensions.Configuration\Gravicode.Bos.Extensions.Configuration.csproj" />
+		<ProjectReference Include="..\Gravicode.Bos.Hosting.Diagnostics\Gravicode.Bos.Hosting.Diagnostics.csproj" />
+	</ItemGroup>
+</Project>
